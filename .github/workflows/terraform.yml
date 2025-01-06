@@ -18,7 +18,7 @@ on:
         default: 'apply'
 
 env:
-      AWS_REGION: us-east-2
+      AWS_REGION: ap-south-1
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -50,7 +50,7 @@ jobs:
         working-directory: eks
 
     env:
-      AWS_REGION: us-east-2
+      AWS_REGION: ap-south-1
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     
@@ -158,3 +158,4 @@ jobs:
       if: ${{ github.event.inputs.action == 'destroy' }}
       working-directory: eks
       run: terraform ${{ github.event.inputs.action }} -auto-approve -var-file=${{ github.event.inputs.tfvars_file }} -input=false
+s
